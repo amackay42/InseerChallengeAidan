@@ -1,40 +1,36 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-
 import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome'
 import {faGithub, faInstagram, faLinkedin, faSkype, faStrava, faTwitter} from '@fortawesome/free-brands-svg-icons';
 import {faBriefcase, faBusinessTime, faClock, faEnvelope, faGraduationCap} from "@fortawesome/free-solid-svg-icons";
 
-import {AppRoutingModule} from './app-routing.module';
+import {RouterModule} from '@angular/router';
 import {AppComponent} from './app.component';
-import {CoreModule} from './core/core.module';
-import {ProfileComponent, SafeHtmlPipe} from './profile/profile.component';
-import {WorktimelineComponent} from './profile/worktimeline/worktimeline.component';
-import {EducationtimelineComponent} from './profile/educationtimeline/educationtimeline.component';
-import {SkillsComponent} from './profile/skills/skills.component';
-import {TravelComponent} from './travel/travel.component';
-import {BlogComponent} from './blog/blog.component';
-import {RecognitionComponent} from './profile/recognition/recognition.component';
+import {EmployeeComponent, SafeHtmlPipe} from './employee/employee.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CustomerComponent } from './customer/customer.component';
+import { CompanyComponent } from './company/company.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent,
-    WorktimelineComponent,
-    EducationtimelineComponent,
-    SkillsComponent,
-    TravelComponent,
-    BlogComponent,
+    EmployeeComponent,
     SafeHtmlPipe,
-    RecognitionComponent
+    DashboardComponent,
+    CustomerComponent,
+    CompanyComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
-    CoreModule,
-    FontAwesomeModule
+    RouterModule,
+    FontAwesomeModule,
+    BrowserAnimationsModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -44,3 +40,4 @@ export class AppModule {
     library.addIcons(faLinkedin, faGithub, faTwitter, faInstagram, faStrava, faSkype, faBriefcase, faBusinessTime, faClock, faGraduationCap, faEnvelope);
   }
 }
+
